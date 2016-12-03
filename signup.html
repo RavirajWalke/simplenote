@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+	<title>SimpleNote | Sign Up</title>
+	<script type="text/javascript">
+    	function validate()
+    	{
+    		if(document.getElementById("uname").value=="")
+    		{
+    			alert("Enter User Name!");
+    			return false;
+    		}
+    		else if(document.getElementById("uid").value=="")
+    			{
+    				alert("Enter UserID!");
+    				return false;
+    			}
+    		else if(document.getElementById("uid").value.indexOf(" ")>=0)
+    		{
+    			alert("UserID can not contain space!");
+    			return false;
+    		}
+    		else if(document.getElementById("pass").value!=document.getElementById("cpass").value)
+    			{
+    				alert("Password do not match!");
+    				return false;
+    			}
+    		else if(document.getElementById("pass").value.length<8)
+    		{
+    			alert("Password length must be at least 8!");
+    			return false;
+    		}
+    		else return true;
+    	}
+    </script>
+</head>
+<body>
+	<h1 align="center">SimpleNote</h1>
+	<form method="post" action="signup.php" onsubmit="return validate();">
+	<table align="center">
+		<tr>
+			<td>
+				<label>Name:</label>
+			</td>
+			<td>
+				<input id="uname" name="username" type="text" required>
+				<label style="color:red;"><sup>*</sup></label>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>User ID:</label>
+			</td>
+			<td>
+				<input id="uid" name="userid" type="text" required>
+				<label style="color:red;"><sup>*</sup></label>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>Password:</label>
+			</td>
+			<td>
+				<input id="pass" name="password" type="password" required>
+				<label style="color:red;"><sup>*</sup></label>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>Comfirm Password:</label>
+			</td>
+			<td>
+				<input id="cpass" name="password" type="password" required>
+				<label style="color:red;"><sup>*</sup></label>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" name="submit" value="Sign Up" />
+			</td>
+		</tr>
+	</table>
+	</form>
+</body>
+</html>

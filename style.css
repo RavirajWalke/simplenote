@@ -1,0 +1,25 @@
+input[type=text] {
+    border: 2px solid gray;
+    border-radius: 4px;
+}
+input[type=password] {
+    border: 2px solid gray;
+    border-radius: 4px;
+}
+input[type=submit] {
+    background-color: gray; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+}
+h1{
+	color: #26C6DA;
+}
+body{
+	background-color: #F5F5F5;
+	color: black;
+}
