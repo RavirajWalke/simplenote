@@ -13,7 +13,8 @@
 		die("error main.php line 11"); 
 	else
 	{
-		echo '<link rel="stylesheet" href="style.css">
+		echo '
+		<link rel="stylesheet" href="style.css">
 		<h1 align="center">SimpleNote</h1>
 	<hr align="center" width="60%">
 	<table width="50%" align="center">
@@ -30,39 +31,50 @@
 		</tr>
 	</table>
 	<hr align="center" width="60%">
-	<div style="background-color: yellow; box-shadow: 10px 10px 5px #888888;">
-							<table width="50%" align="center">
-								<tr align="center">
-									<td>
-										<b><h3>'.mysql_result($result,0,"note_title").'</h3></b>
-									</td>
-								</tr>
-								<tr align="center">
-									<td colspan="3">
-										<h3>'.mysql_result($result,0,"note").'</h3>
-									</td>
-								</tr>
-							</table>
-			</div>
-			<br><br>
-<form action="send.php" method="post" >
-	<table align="center">
-		<tr>
-			<td>
-				<label>Email ID:</label>
-			</td>
-			<td>
-				<input id="uid" name="email" type="text" required>
-				<label style="color:red;"><sup>*</sup></label>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2" align="center">
-				<input type="submit" value="Share via Email" />	
+	<table width="30%" align="center" cellpadding="10">
+		<tr align="center">
+			<td width="100%">
+				<div style="background-color: yellow; box-shadow: 10px 10px 5px #888888;">
+					<table width="100%" align="center">
+						<tr align="center">
+							<td width="80%">
+								<b><h3>'.mysql_result($result,0,"note_title").'</h3></b>
+							</td>
+						</tr>
+						<tr align="center">
+							<td colspan="3">
+								<h3>'.mysql_result($result,0,"note").'</h3>
+							</td>
+						</tr>
+					</table>
+				</div>
 			</td>
 		</tr>
 	</table>
-</form>
+	<br><br>
+	<form method="post" action="search.php">
+		<table align="center">
+			<tr>
+				<td align="center">
+					<input type="text" id="sid" placeholder="Enter user ID"></input>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<input type="submit" value="Search"></input>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<form method="post" action="send.phpss">
+		<table align="center">
+			<tr>
+				<td align="center">
+					<input style="background-color: orange;" type="submit" value="or Share via Email"></input>
+				</td>
+			</tr>
+		</table>
+	</form>
 	';
 	}
 	
